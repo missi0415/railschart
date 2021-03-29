@@ -10,14 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210329074728) do
+ActiveRecord::Schema.define(version: 2021_03_29_085711) do
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "rate"
-    t.integer  "kindness"
-    t.integer  "sadness"
-    t.integer  "bitterness"
+    t.string "title"
+    t.integer "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_values", force: :cascade do |t|
+    t.string "post_id"
+    t.string "title"
+    t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
